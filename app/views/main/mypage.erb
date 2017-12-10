@@ -1,0 +1,33 @@
+<header class="bg-white text-white">
+  <div class="container text-center">
+    <div class="justify-content-center">
+      <!-- <form class="my-2 my-lg-0"> -->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+          <h2>나의 Stack 등록</h2>
+          <%#= form_tag stacks_path, class: "justify-content-center" do%>
+
+          <% @stack_fields.each do |field|%>
+            <p>
+              <a class="btn btn-link" data-toggle="collapse" href="#<%=field.field %>" aria-expanded="false" aria-controls="collapseExample">
+                <%= field.field%>
+              </a>
+            </p>
+            <div class="collapse" id="<%= field.field%>">
+              <div class="card card-body">
+                <% field.stacks.each do |stack| %>
+                  <a href="/stacks/<%=stack.id%>" data-toggle="tooltip" title="<%=stack.name%>">
+                    <%= image_tag "https://s3.ap-northeast-2.amazonaws.com/dahisy-4th-project/#{field.field}/#{stack.name.capitalize}.png", id: "#{stack.name}", class: "mr-3", width: "50", height: "50" %>
+                  </a>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <%#= link_to '등록', main_mypage_add_stack_path, class: "btn btn-light my-2 my-sm-0" %> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

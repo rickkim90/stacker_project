@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <img src="https://s3.ap-northeast-2.amazonaws.com/dahisy-4th-project/Database/<%= @stack.name %>.png" width="100">
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stack.name.capitalize %>
+</p>
+
+<p>
+  <strong>Site url:</strong>
+  <%= @stack.site_url %>
+</p>
+
+<p>
+  <strong>Short describe:</strong>
+  <%= @stack.short_describe %>
+</p>
+
+<p>
+  <strong>Describe:</strong>
+  <%= @stack.describe %>
+</p>
+
+<p>
+  <strong>Version:</strong>s
+  <%= @stack.version %>
+</p>
+
+<p>
+  <strong>Stack field:</strong>
+  <%= @stack.stack_field.field %>
+</p>
+
+
+<%= link_to 'Edit', edit_stack_path(@stack) %> |
+<%= link_to 'Back', stacks_path %>
